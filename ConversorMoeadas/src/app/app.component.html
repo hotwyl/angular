@@ -1,0 +1,55 @@
+<div class="container pt-5">
+
+    <section class="converter">
+        <div class="row">
+            <div class="col-6">
+                <div class="border border-secondary border-2 p-5">
+                    <h6>Digite o valor a ser convertido</h6>
+                    <hr>
+                    <div class="formulario">
+
+                        <form [formGroup]="formulario" (ngSubmit)="Converter()">
+
+                            <div class="form-group">
+                                Valor em Dólar (USD) U$:
+                                <input type="number" class="form-control form-control-sm" placeholder="valor" formControlName="valor" required>
+                            </div>
+
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-outline-secondary btn-sm">Converter</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6" *ngIf="visibilidadeValorConvertido">
+                <div class="border border-secondary border-2 rouded p-5">
+                    <h6>Valor convertido</h6>
+                    <hr>
+                    <h1 class="text-primary">R$: {{valorConvertido}} </h1>
+                    <h3 class="text-muted">Valor em Real - (BRL)</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="cotacao" *ngIf="visibilidadeValorConvertido">
+        <div class="row py-5">
+            <div class="col">
+                <h3 class="text-primary text-center">Cotação do dia</h3>
+                <hr>
+                <div class="row">
+                    <div class="col-3 mb-3" *ngFor=" let moeda of moedas | keyvalue ">
+                        <label for="moeda">Moeda: {{moeda.key}} - U$: </label>
+                        <input type="number" value="{{moeda.value}}" disabled readonly>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
