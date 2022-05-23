@@ -1,12 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "cli": {
-    "analytics": "a537119d-9f6c-4162-a9cd-8feb3c423ff1"
-  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ConversorMoeadas": {
+    "atividade_facu": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/conversor-moeadas",
+            "outputPath": "dist/atividade_facu",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ConversorMoeadas:build:production"
+              "browserTarget": "atividade_facu:build:production"
             },
             "development": {
-              "browserTarget": "ConversorMoeadas:build:development"
+              "browserTarget": "atividade_facu:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ConversorMoeadas:build"
+            "browserTarget": "atividade_facu:build"
           }
         },
         "test": {
@@ -110,5 +107,5 @@
       }
     }
   },
-  "defaultProject": "ConversorMoeadas"
+  "defaultProject": "atividade_facu"
 }

@@ -1,0 +1,38 @@
+<header class="container"></header>
+
+<ul class="container nav nav-tabs pt-3">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="#">Lista de Alunos</a>
+  </li>
+</ul>
+
+<main class="container">
+  <section class="py-3">
+    <p class="fs-1">Agenda</p>
+  </section>
+
+  <section>
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let item of cabecalho">{{ item }}</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let contato of contatos">
+          <td>{{ contato.nome }}</td>
+          <td>{{ contato.ru }}</td>
+          <td>{{ contato.curso }}</td>
+          <td>{{ contato.dnNascimento }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th scope="col" *ngFor="let item of cabecalho">{{ item }}</th>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+</main>
+
+<footer class="container"></footer>
